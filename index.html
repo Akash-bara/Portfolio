@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Akash Bara | Portfolio</title>
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      rel="stylesheet"
+    />
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        font-family: "Poppins", sans-serif;
+        background-color: rgb(2, 3, 81);
+        color: whitesmoke;
+        line-height: 1.6;
+      }
+
+      /* NAVBAR */
+      nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background: rgba(23, 23, 119, 0.95);
+        backdrop-filter: blur(5px);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 50px;
+        z-index: 1000;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+      }
+      .logo {
+        font-size: 1.8rem;
+        font-weight: bold;
+        color: aquamarine;
+      }
+      nav ul {
+        display: flex;
+        list-style: none;
+      }
+      nav ul li {
+        margin: 0 20px;
+      }
+      nav ul li a {
+        color: whitesmoke;
+        text-decoration: none;
+        font-weight: 500;
+        transition: 0.3s;
+      }
+      nav ul li a:hover,
+      nav ul li a.active {
+        color: aquamarine;
+      }
+
+      /* SECTIONS */
+      section {
+        min-height: 100vh;
+        padding: 120px 8%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        text-align: center;
+      }
+
+      /* HOME */
+      .home-container {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        gap: 50px;
+        flex-wrap: wrap;
+      }
+      .home-image img {
+        width: 400px;
+        height: 400px;
+        border-radius: 50%;
+        border: 4px solid aquamarine;
+        box-shadow: 0 0 30px rgba(0, 255, 255, 0.6);
+        object-fit: cover;
+        animation: float 3s ease-in-out infinite;
+      }
+      @keyframes float {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-15px);
+        }
+      }
+      .home-text h2 {
+        font-size: 2.5rem;
+      }
+      .home-text h3 {
+        font-size: 2rem;
+        margin: 10px 0;
+      }
+      .highlight {
+        color: aquamarine;
+      }
+      .home-text p {
+        max-width: 500px;
+        margin-bottom: 20px;
+      }
+      .hire-btn {
+        display: inline-block;
+        border: 2px solid aquamarine;
+        padding: 10px 25px;
+        border-radius: 25px;
+        color: aquamarine;
+        text-decoration: none;
+        font-weight: bold;
+        transition: all 0.3s ease-in-out;
+      }
+      .hire-btn:hover {
+        background: aquamarine;
+        color: rgb(2, 3, 81);
+        transform: scale(1.05);
+      }
+
+      /* SKILLS */
+      .skills-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+        width: 100%;
+        max-width: 800px;
+        margin-top: 30px;
+      }
+      .skills-column h3 {
+        margin-bottom: 15px;
+        color: aquamarine;
+      }
+      .skill-box {
+        background: rgba(255, 255, 255, 0.05);
+        padding: 12px;
+        border-radius: 10px;
+        margin: 8px 0;
+        text-align: left;
+        transition: 0.3s;
+      }
+      .skill-box:hover {
+        transform: scale(1.03);
+        background: rgba(255, 255, 255, 0.1);
+      }
+
+      /* PROJECTS */
+      #projects {
+        margin-top: 50px;
+        width: 100%;
+        max-width: 800px;
+        text-align: left;
+      }
+      #projects h2 {
+        color: aquamarine;
+        font-size: 2.2rem;
+        margin-bottom: 15px;
+      }
+      .project-list,
+      .achievement-list {
+        list-style: disc;
+        padding-left: 20px;
+        font-size: 1.2rem;
+        margin-bottom: 40px;
+      }
+      .project-list li {
+        margin-bottom: 10px;
+      }
+      .project-list li a {
+        display: block;
+        color: aquamarine;
+        text-decoration: none;
+        margin-top: 5px;
+      }
+      .project-list li a:hover {
+        text-decoration: underline;
+      }
+
+      /* ABOUT + CONTACT */
+      #about {
+        background: linear-gradient(135deg, #001f4d, #003366, #0059b3);
+        border-radius: 25px;
+        margin-top: 50px;
+        box-shadow: 0 0 25px rgba(0, 153, 255, 0.4);
+        padding: 80px 5%;
+      }
+      .about-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        gap: 50px;
+        flex-wrap: wrap;
+        width: 100%;
+      }
+      .about-image img {
+        width: 380px;
+        height: 380px;
+        border-radius: 50%;
+        border: 4px solid aquamarine;
+        object-fit: cover;
+        box-shadow: 0 0 40px rgba(0, 255, 255, 0.5);
+      }
+      .about-text {
+        max-width: 450px;
+        text-align: left;
+      }
+      .about-text h2 {
+        font-size: 2.2rem;
+        margin-bottom: 10px;
+      }
+      .about-text p {
+        margin-bottom: 20px;
+        font-size: 1rem;
+        opacity: 0.9;
+      }
+      .social-icons {
+        margin: 15px 0;
+      }
+      .social-icons a {
+        color: aquamarine;
+        margin-right: 15px;
+        font-size: 1.5rem;
+        transition: 0.3s;
+      }
+      .social-icons a:hover {
+        color: white;
+        transform: scale(1.1);
+      }
+      .connect-btn {
+        display: inline-block;
+        background: aquamarine;
+        color: #001f4d;
+        padding: 10px 20px;
+        border-radius: 25px;
+        font-weight: bold;
+        cursor: pointer;
+        border: none;
+        transition: 0.3s;
+      }
+      .connect-btn:hover {
+        background: white;
+        transform: scale(1.05);
+      }
+
+      /* POPUP MODAL */
+      .modal {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.8);
+        align-items: center;
+        justify-content: center;
+        z-index: 2000;
+      }
+      .modal-content {
+        background: #002a5c;
+        padding: 30px;
+        border-radius: 15px;
+        width: 90%;
+        max-width: 400px;
+        text-align: center;
+        box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+      }
+      .modal-content h3 {
+        margin-bottom: 15px;
+        color: aquamarine;
+      }
+      .modal-content input,
+      .modal-content textarea {
+        width: 100%;
+        padding: 10px;
+        margin: 8px 0;
+        border: none;
+        border-radius: 8px;
+        outline: none;
+        background: rgba(255, 255, 255, 0.1);
+        color: white;
+      }
+      .modal-content button {
+        background: aquamarine;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 8px;
+        font-weight: bold;
+        cursor: pointer;
+        margin-top: 10px;
+        transition: 0.3s;
+      }
+      .close-btn {
+        background: crimson;
+        color: white;
+        margin-left: 10px;
+      }
+      .modal-content button:hover {
+        transform: scale(1.05);
+      }
+
+      /* FOOTER */
+      footer {
+        width: 100%;
+        padding: 15px 0;
+        background: rgba(23, 23, 119, 0.95);
+        text-align: center;
+        color: rgb(33, 89, 232);
+        font-weight: 500;
+        margin-top: 50px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- NAVBAR -->
+    <nav>
+      <div class="logo">Akash</div>
+      <ul>
+        <li><a href="#home" class="active">Home</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#achievements">Achievements</a></li>
+        <li><a href="#about">About & Contact</a></li>
+      </ul>
+    </nav>
+
+    <!-- HOME -->
+    <section id="home">
+      <div class="home-container">
+        <div class="home-image">
+          <img src="Images/main.jpg" alt="Profile Image" />
+        </div>
+        <div class="home-text">
+          <h2>Hi, It's <span class="highlight">Akash</span></h2>
+          <h3>I'm a <span id="element"></span></h3>
+          <p>
+            I love creating modern, responsive, and user-friendly websites using
+            the latest technologies.
+          </p>
+          <a href="Files/Akash-Resume.pdf" class="hire-btn" download
+            >Download Resume</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills">
+      <h2>Skills</h2>
+      <div class="skills-container">
+        <div class="skills-column">
+          <h3>Technical Skills</h3>
+          <div class="skill-box">Programming: Java, JavaScript, Python, C</div>
+          <div class="skill-box">Frontend: HTML, CSS, ReactJS</div>
+          <div class="skill-box">Backend: NodeJS, ExpressJS</div>
+          <div class="skill-box">Framework: Bootstrap</div>
+          <div class="skill-box">Database: MongoDB, MySQL</div>
+          <div class="skill-box">API: REST API</div>
+        </div>
+        <div class="skills-column">
+          <h3>Non-Technical Skills</h3>
+          <div class="skill-box">Communication</div>
+          <div class="skill-box">Problem-Solving</div>
+          <div class="skill-box">Adaptability</div>
+          <div class="skill-box">Leadership</div>
+          <div class="skill-box">Time Management</div>
+          <div class="skill-box">Teamwork</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects">
+      <h2>Projects</h2>
+      <ul class="project-list">
+        <li>
+          Developed a portfolio website using HTML, CSS, and JavaScript.
+          <a href="https://your-live-portfolio-link.com" target="_blank"
+            >Check Live</a
+          >
+        </li>
+        <li>
+          <strong>Food Adulteration Website</strong><br />
+          Designed and deployed a community awareness website highlighting
+          common food adulteration tests.<br />
+          Implemented interactive elements and a clean layout for better user
+          experience.<br />
+          <a href="https://akash-bara.github.io/CSP/" target="_blank"
+            >View Live Project</a
+          >
+        </li>
+        <li>
+          <strong>ReactJS Projects</strong><br />
+          Built dynamic projects like To-Do List, Color Converter, Current Time,
+          and Stopwatch to practice component-based architecture.<br />
+          Gained hands-on experience with React hooks, props, and state
+          management.<br />
+          <a href="https://github.com/Akash-bara/My-Project.git" target="_blank"
+            >GitHub Repository</a
+          >
+        </li>
+      </ul>
+    </section>
+
+    <!-- ACHIEVEMENTS -->
+    <section id="achievements">
+      <h2>Achievements</h2>
+      <ul class="achievement-list">
+        <li>Completed Cybersecurity and C certifications by Cisco.</li>
+      </ul>
+    </section>
+
+    <!-- ABOUT + CONTACT -->
+    <section id="about">
+      <div class="about-container">
+        <div class="about-image">
+          <img src="Images/main.jpg" alt="Profile Image" />
+        </div>
+        <div class="about-text">
+          <h2>Hello, I'm <span class="highlight">Akash</span></h2>
+          <p>
+            I have a strong interest in software and web development, focusing
+            on building clean, functional, and user-friendly applications.
+          </p>
+          <div class="social-icons">
+            <a href="https://linkedin.com/in/akashbara" target="_blank"
+              ><i class="fab fa-linkedin"></i
+            ></a>
+            <a href="https://github.com/Akash-bara" target="_blank"
+              ><i class="fab fa-github"></i
+            ></a>
+            <a href="mailto:akash80920@gmail.com"
+              ><i class="fas fa-envelope"></i
+            ></a>
+            <a
+              href="https://www.google.com/maps/place/Bhimavaram,+Andhra+Pradesh,+India"
+              target="_blank"
+            >
+              <i class="fas fa-map-marker-alt"></i>
+            </a>
+          </div>
+          <button class="connect-btn" onclick="openModal()">
+            Let's Connect
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- POPUP MODAL -->
+    <div class="modal" id="contactModal">
+      <div class="modal-content">
+        <h3>Send Me a Message</h3>
+        <form action="https://formsubmit.co/akash80920@gmail.com" method="POST">
+          <input type="hidden" name="_captcha" value="false" />
+          <input type="text" name="name" placeholder="Your Name" required />
+          <input type="email" name="email" placeholder="Your Email" required />
+          <textarea
+            name="message"
+            rows="3"
+            placeholder="Your Message"
+            required
+          ></textarea>
+          <div>
+            <button type="submit">Send</button>
+            <button type="button" class="close-btn" onclick="closeModal()">
+              Cancel
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>&copy; 2025 Akash Bara. All rights reserved.</footer>
+
+    <!-- SCRIPTS -->
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script>
+      var typed = new Typed("#element", {
+        strings: ["Software Developer", "Web Developer"],
+        typeSpeed: 50,
+        backSpeed: 30,
+        loop: true,
+      });
+
+      // Scroll to top on page load
+      window.onload = function () {
+        window.scrollTo(0, 0);
+      };
+
+      const sections = document.querySelectorAll("section");
+      const navLinks = document.querySelectorAll("nav ul li a");
+
+      window.addEventListener("scroll", () => {
+        let current = "";
+        sections.forEach((section) => {
+          const sectionTop = section.offsetTop - 200;
+          if (pageYOffset >= sectionTop) {
+            current = section.getAttribute("id");
+          }
+        });
+        navLinks.forEach((link) => {
+          link.classList.remove("active");
+          if (link.getAttribute("href") === "#" + current) {
+            link.classList.add("active");
+          }
+        });
+      });
+
+      function openModal() {
+        document.getElementById("contactModal").style.display = "flex";
+      }
+      function closeModal() {
+        document.getElementById("contactModal").style.display = "none";
+      }
+    </script>
+  </body>
+</html>
