@@ -69,6 +69,14 @@
         color: aquamarine;
       }
 
+      /* HAMBURGER ICON */
+      .hamburger {
+        display: none;
+        font-size: 1.8rem;
+        cursor: pointer;
+        color: aquamarine;
+      }
+
       /* SECTIONS */
       section {
         min-height: 100vh;
@@ -326,13 +334,96 @@
         font-weight: 500;
         margin-top: 50px;
       }
+
+      /* ===== RESPONSIVE DESIGN ===== */
+      @media (max-width: 768px) {
+        nav {
+          flex-direction: row;
+          padding: 10px 20px;
+        }
+        nav ul {
+          flex-direction: column;
+          position: absolute;
+          top: 65px;
+          left: -100%;
+          width: 100%;
+          background: rgba(23, 23, 119, 0.95);
+          transition: 0.3s;
+          text-align: center;
+          padding: 10px 0;
+        }
+        nav ul.show {
+          left: 0;
+        }
+        nav ul li {
+          margin: 15px 0;
+        }
+        .hamburger {
+          display: block;
+        }
+
+        section {
+          padding: 80px 5%;
+        }
+
+        .home-container {
+          flex-direction: column;
+          gap: 25px;
+          text-align: center;
+        }
+        .home-image img {
+          width: 280px;
+          height: 280px;
+        }
+        .home-text h2 {
+          font-size: 2rem;
+        }
+        .home-text h3 {
+          font-size: 1.5rem;
+        }
+
+        .about-container {
+          flex-direction: column;
+          text-align: center;
+          gap: 25px;
+        }
+        .about-image img {
+          width: 280px;
+          height: 280px;
+        }
+        .about-text {
+          max-width: 100%;
+          text-align: center;
+        }
+
+        .skills-container {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .home-image img,
+        .about-image img {
+          width: 200px;
+          height: 200px;
+        }
+        .home-text h2 {
+          font-size: 1.6rem;
+        }
+        .home-text h3 {
+          font-size: 1.2rem;
+        }
+      }
     </style>
   </head>
   <body>
     <!-- NAVBAR -->
     <nav>
       <div class="logo">Akash</div>
-      <ul>
+      <div class="hamburger" onclick="toggleMenu()">
+        <i class="fas fa-bars"></i>
+      </div>
+      <ul id="nav-menu">
         <li><a href="#home" class="active">Home</a></li>
         <li><a href="#skills">Skills</a></li>
         <li><a href="#projects">Projects</a></li>
@@ -501,24 +592,25 @@
       });
 
       // Scroll to top on page load
-      window.onload = function () {
+      window.onload = () => {
         window.scrollTo(0, 0);
       };
 
+      // Smooth active link highlight
       const sections = document.querySelectorAll("section");
       const navLinks = document.querySelectorAll("nav ul li a");
 
       window.addEventListener("scroll", () => {
         let current = "";
         sections.forEach((section) => {
-          const sectionTop = section.offsetTop - 200;
-          if (pageYOffset >= sectionTop) {
+          const sectionTop = section.offsetTop - 150;
+          if (scrollY >= sectionTop) {
             current = section.getAttribute("id");
           }
         });
         navLinks.forEach((link) => {
           link.classList.remove("active");
-          if (link.getAttribute("href") === "#" + current) {
+          if (link.getAttribute("href").includes(current)) {
             link.classList.add("active");
           }
         });
@@ -530,6 +622,22 @@
       function closeModal() {
         document.getElementById("contactModal").style.display = "none";
       }
+
+      // Hamburger menu toggle
+      function toggleMenu() {
+        document.getElementById("nav-menu").classList.toggle("show");
+      }
+
+      // Close hamburger menu automatically when a link is clicked (mobile)
+      const navLinksMobile = document.querySelectorAll("#nav-menu li a");
+      navLinksMobile.forEach((link) => {
+        link.addEventListener("click", () => {
+          const navMenu = document.getElementById("nav-menu");
+          if (navMenu.classList.contains("show")) {
+            navMenu.classList.remove("show");
+          }
+        });
+      });
     </script>
   </body>
 </html>
