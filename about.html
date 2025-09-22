@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Akash Bara | About & Contact</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- NAVBAR -->
+  <nav>
+    <div class="logo">Akash</div>
+    <div class="hamburger" onclick="toggleMenu()">
+      <i class="fas fa-bars"></i>
+    </div>
+    <ul id="nav-menu">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="skills.html">Skills</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="achievements.html">Achievements</a></li>
+      <li><a href="about.html" class="active">About & Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- HOME ICON -->
+  <a href="index.html" class="home-icon" title="Go to Home">
+    <i class="fas fa-home"></i>
+  </a>
+
+  <!-- ABOUT SECTION -->
+  <section id="about">
+    <div class="about-container">
+      <div class="about-image">
+        <img src="Images/main.jpg" alt="Profile Image" />
+      </div>
+      <div class="about-text">
+        <h2>Hello, I'm <span class="highlight">Akash</span></h2>
+        <p>
+          I have a strong interest in software and web development, focusing
+          on building clean, functional, and user-friendly applications.
+        </p>
+        
+        <div class="social-icons">
+          <a href="https://linkedin.com/in/akashbara" target="_blank"><i class="fab fa-linkedin"></i></a>
+          <a href="https://github.com/Akash-bara" target="_blank"><i class="fab fa-github"></i></a>
+          <a href="mailto:akash80920@gmail.com"><i class="fas fa-envelope"></i></a>
+          <a href="https://www.google.com/maps/place/Bhimavaram,+Andhra+Pradesh,+India" target="_blank"><i class="fas fa-map-marker-alt"></i></a>
+        </div>
+        <button class="connect-btn" onclick="openModal()">Let's Connect</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT MODAL -->
+  <div class="modal" id="contactModal">
+    <div class="modal-content">
+      <h3>Send Me a Message</h3>
+      <form action="https://formsubmit.co/akash80920@gmail.com" method="POST">
+        <input type="hidden" name="_captcha" value="false" />
+        <input type="text" name="name" placeholder="Your Name" required />
+        <input type="email" name="email" placeholder="Your Email" required />
+        <textarea name="message" rows="3" placeholder="Your Message" required></textarea>
+        <div>
+          <button type="submit">Send</button>
+          <button type="button" class="close-btn" onclick="closeModal()">Cancel</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>&copy; 2025 Akash Bara. All rights reserved.</footer>
+
+  <!-- SCRIPTS -->
+  <script>
+    // Hamburger menu toggle
+    function toggleMenu() {
+      document.getElementById("nav-menu").classList.toggle("show");
+    }
+
+    // Close hamburger menu when a link is clicked
+    const navLinks = document.querySelectorAll("#nav-menu li a");
+    navLinks.forEach(link => {
+      link.addEventListener("click", () => {
+        const navMenu = document.getElementById("nav-menu");
+        if (navMenu.classList.contains("show")) {
+          navMenu.classList.remove("show");
+        }
+      });
+    });
+
+    // Open / Close modal
+    function openModal() {
+      document.getElementById("contactModal").style.display = "flex";
+    }
+    function closeModal() {
+      document.getElementById("contactModal").style.display = "none";
+    }
+  </script>
+</body>
+</html>
