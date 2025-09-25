@@ -448,7 +448,6 @@ footer {
   }
 }
 .close-btn{
-  color: white;
+  color: rgb(0, 0, 0);
   font-size: bold;
-  background-color: crimson;
 }
