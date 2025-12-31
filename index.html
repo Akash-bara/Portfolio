@@ -1,106 +1,121 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Akash Bara | Home</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
-  <style>
-    /* Home Icon for all pages */
-    .home-icon {
-      position: fixed;
-      top: 75px; /* below navbar */
-      left: 20px;
-      background: aquamarine;
-      color: rgb(2, 3, 81);
-      padding: 10px 12px;
-      border-radius: 50%;
-      font-size: 1.3rem;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-      z-index: 1000;
-      text-decoration: none;
-      transition: transform 0.3s, background 0.3s;
-    }
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Akash Bara | Home</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      /* Home Icon for all pages */
+      .home-icon {
+        position: fixed;
+        top: 75px; /* below navbar */
+        left: 20px;
+        background: aquamarine;
+        color: rgb(2, 3, 81);
+        padding: 10px 12px;
+        border-radius: 50%;
+        font-size: 1.3rem;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        z-index: 1000;
+        text-decoration: none;
+        transition: transform 0.3s, background 0.3s;
+      }
 
-    .home-icon:hover {
-      transform: scale(1.1);
-      background: rgb(0, 255, 255);
-    }
-  </style>
-</head>
-<body>
-  <!-- NAVBAR -->
-  <nav>
-    <div class="logo">Akash Bara</div>
-    <div class="hamburger" onclick="toggleMenu()">
-      <i class="fas fa-bars"></i>
-    </div>
-    <ul id="nav-menu">
-      <li><a href="index.html" class="active">Home</a></li>
-      <li><a href="skills.html">Skills</a></li>
-      <li><a href="projects.html">Projects</a></li>
-      <li><a href="certifiaction.html">Certifications</a></li>
-      <li><a href="about.html">About & Contact</a></li>
-    </ul>
-  </nav>
-
- 
-
-  <!-- HOME SECTION -->
-  <section id="home">
-    <div class="home-container">
-      <div class="home-image">
-        <img src="Images/main.jpg" alt="Profile Image">
+      .home-icon:hover {
+        transform: scale(1.1);
+        background: rgb(0, 255, 255);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- NAVBAR -->
+    <nav>
+      <div class="logo">Akash Bara</div>
+      <div class="hamburger" onclick="toggleMenu()">
+        <i class="fas fa-bars"></i>
       </div>
-      <div class="home-text">
-        <h2>Hi, It's <span class="highlight">Akash</span></h2>
-        <h3>I'm a <span id="element"></span></h3>
-        <p>I love creating modern, responsive, and user-friendly websites using the latest technologies.</p>
-        <a href="resume/RESUME.pdf" class="hire-btn" target="_blank" rel="noopener noreferrer">
-  View Resume
-</a>
+      <ul id="nav-menu">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="skills.html">Skills</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="certifiaction.html">Certifications</a></li>
+        <li><a href="about.html">About & Contact</a></li>
+      </ul>
+    </nav>
 
-        <a href="resume/RESUME.pdf" class="hire-btn" download>Download Resume</a>
+    <!-- HOME SECTION -->
+    <section id="home">
+      <div class="home-container">
+        <div class="home-image">
+          <img src="Images/main.jpg" alt="Profile Image" />
+        </div>
+        <div class="home-text">
+          <h2>Hi, It's <span class="highlight">Akash</span></h2>
+          <h3>I'm a <span id="element"></span></h3>
+          <p>
+            I love creating modern, responsive, and user-friendly websites using
+            the latest technologies.
+          </p>
+          <div class="resume-buttons">
+            <a
+              href="resume/RESUME.pdf"
+              class="hire-btn"
+              target="_blank"
+              rel="noopener noreferrer"
+              >View Resume</a
+            >
+            <a href="resume/RESUME.pdf" class="hire-btn" download
+              >Download Resume</a
+            >
+          </div>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- FOOTER -->
-  <footer>&copy; 2025 Akash Bara. All rights reserved.</footer>
+    <!-- FOOTER -->
+    <footer>&copy; 2025 Akash Bara. All rights reserved.</footer>
 
-  <!-- SCRIPTS -->
-  <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
-  <script>
-    // Typed.js animation
-    var typed = new Typed("#element", {
-      strings: ["Software Developer", "Web Developer"],
-      typeSpeed: 50,
-      backSpeed: 30,
-      loop: true,
-    });
-
-    // Hamburger menu toggle
-    function toggleMenu() {
-      document.getElementById("nav-menu").classList.toggle("show");
-    }
-
-    // Close hamburger menu when a link is clicked
-    const navLinks = document.querySelectorAll("#nav-menu li a");
-    navLinks.forEach(link => {
-      link.addEventListener("click", () => {
-        const navMenu = document.getElementById("nav-menu");
-        if(navMenu.classList.contains("show")) navMenu.classList.remove("show");
+    <!-- SCRIPTS -->
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script>
+      // Typed.js animation
+      var typed = new Typed("#element", {
+        strings: ["Software Developer", "Web Developer"],
+        typeSpeed: 50,
+        backSpeed: 30,
+        loop: true,
       });
-    });
 
-    // Scroll to top/home on page load
-    window.onload = () => {
-      const homeSection = document.getElementById("home");
-      if(homeSection) homeSection.scrollIntoView({ behavior: "auto" });
-      else window.scrollTo(0,0);
-    };
-  </script>
-</body>
+      // Hamburger menu toggle
+      function toggleMenu() {
+        document.getElementById("nav-menu").classList.toggle("show");
+      }
+
+      // Close hamburger menu when a link is clicked
+      const navLinks = document.querySelectorAll("#nav-menu li a");
+      navLinks.forEach((link) => {
+        link.addEventListener("click", () => {
+          const navMenu = document.getElementById("nav-menu");
+          if (navMenu.classList.contains("show"))
+            navMenu.classList.remove("show");
+        });
+      });
+
+      // Scroll to top/home on page load
+      window.onload = () => {
+        const homeSection = document.getElementById("home");
+        if (homeSection) homeSection.scrollIntoView({ behavior: "auto" });
+        else window.scrollTo(0, 0);
+      };
+    </script>
+  </body>
 </html>

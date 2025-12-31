@@ -123,6 +123,7 @@ section {
   margin-bottom: 20px;
 }
 .hire-btn {
+  margin-right: 10px;
   display: inline-block;
   border: 2px solid aquamarine;
   padding: 10px 25px;
@@ -450,4 +451,16 @@ footer {
 .close-btn{
   color: rgb(0, 0, 0);
   font-size: bold;
+}
+/* Resume Buttons*/
+.resume-buttons {
+  display: flex;
+  gap: 12px;
+}
+
+@media (max-width: 768px) {
+  .resume-buttons {
+    flex-direction: column;
+    gap: 14px;   /* this is the vertical space you want on mobile */
+  }
 }
