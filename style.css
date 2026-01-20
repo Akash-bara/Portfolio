@@ -172,31 +172,67 @@ section {
   max-width: 800px;
   text-align: left;
 }
+
 #projects h2 {
-  color: aquamarine;
-  font-size: 2.2rem;
+  font-size: 2.4rem;
   margin-bottom: 15px;
 }
+
 .project-list,
 .achievement-list {
-  list-style-type: disc;
-  padding-left: 1.5rem;
+  list-style: none;                
+  padding-left: 0;                  
   text-align: left;
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   margin-top: 15px;
   margin-bottom: 40px;
 }
+
+
+
+
+
+.project-list li strong,
+.achievement-list li strong {
+  font-size: 1.6rem;
+  color: aquamarine;
+  display: inline-block;
+  margin-bottom: 6px;
+}
+
+.project-list li p,
+.achievement-list li p {
+  margin: 6px 0;
+  line-height: 1.7;
+}
+
 .project-list li a,
 .achievement-list li a {
   display: inline-block;
+  margin-top: 10px;
+  margin-right: 12px;
+  padding: 6px 14px;
+  border: 1px solid aquamarine;
+  border-radius: 18px;
+  font-size: 0.95rem;
   color: aquamarine;
   text-decoration: none;
-  margin-top: 5px;
+  transition: all 0.3s ease;
 }
+.project-list li,
+.achievement-list li {
+  padding-bottom: 20px;
+  margin-bottom: 30px;
+  border-bottom: 2px solid rgba(127, 255, 212, 0.4); /* aquamarine underline */
+  transition: transform 0.3s ease;
+}
+
 .project-list li a:hover,
 .achievement-list li a:hover {
-  text-decoration: underline;
+  background: aquamarine;
+  color: rgb(2, 3, 81);
 }
+
 
 /* ABOUT + CONTACT */
 #about {
@@ -463,4 +499,16 @@ footer {
     flex-direction: column;
     gap: 14px;   /* this is the vertical space you want on mobile */
   }
+}
+
+@media (min-width: 769px) {
+  #projects {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+.certifications{
+  color: aquamarine;
+  font-size:1.8rem;
+  margin-bottom: 1rem;
 }
