@@ -512,3 +512,123 @@ footer {
   font-size:1.8rem;
   margin-bottom: 1rem;
 }
+/* CERTIFICATIONS GRID */
+.cert-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+  width: 100%;
+  max-width: 900px;
+  margin-bottom: 40px;
+}
+
+/* CERTIFICATION CARD */
+.cert-card {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 18px;
+  border-radius: 12px;
+  text-align: left;
+  transition: 0.3s;
+  border: 1px solid rgba(127, 255, 212, 0.2);
+}
+
+.cert-card:hover {
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* TITLE */
+.cert-card strong {
+  font-size: 1.2rem;
+  color: aquamarine;
+  display: block;
+  margin-bottom: 6px;
+}
+
+/* COMPANY NAME */
+.cert-card p {
+  font-size: 0.95rem;
+  opacity: 0.8;
+  margin-bottom: 12px;
+}
+
+/* BUTTON */
+.cert-card a {
+  display: inline-block;
+  padding: 6px 14px;
+  border: 1px solid aquamarine;
+  border-radius: 18px;
+  font-size: 0.85rem;
+  color: aquamarine;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.cert-card a:hover {
+  background: aquamarine;
+  color: rgb(2, 3, 81);
+}
+/* PROJECT GRID */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+  width: 100%;
+  max-width: 900px;
+  margin-top: 20px;
+}
+
+/* PROJECT CARD */
+.project-card {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 18px;
+  border-radius: 12px;
+  text-align: left;
+  transition: 0.3s;
+  border: 1px solid rgba(127, 255, 212, 0.2);
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* TITLE */
+.project-card strong {
+  font-size: 1.2rem;
+  color: aquamarine;
+  display: block;
+  margin-bottom: 6px;
+}
+
+/* DESCRIPTION */
+.project-card p {
+  font-size: 0.95rem;
+  margin-bottom: 10px;
+}
+
+/* TECH STACK */
+.project-card small {
+  font-size: 0.85rem;
+  opacity: 0.8;
+  display: block;
+  margin-bottom: 12px;
+}
+
+/* LINKS */
+.project-links a {
+  display: inline-block;
+  margin-right: 10px;
+  padding: 6px 14px;
+  border: 1px solid aquamarine;
+  border-radius: 18px;
+  font-size: 0.85rem;
+  color: aquamarine;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.project-links a:hover {
+  background: aquamarine;
+  color: rgb(2, 3, 81);
+}
